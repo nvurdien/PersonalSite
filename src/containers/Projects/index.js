@@ -2,84 +2,38 @@ import React, { Component } from 'react';
 import 'uikit/dist/css/uikit.min.css';
 import 'uikit/dist/js/uikit.min';
 import Sidebar from '../../components/Sidebar';
-import {Particles} from "react-particles-js";
 import '../../App.css';
-import Project from '../../components/Project'
+import Project from '../../components/Project';
+import projects from '../../lists/projects'
 
-
-const particlesOptions = {
-    particles: {
-        number: {
-            value: 50,
-            density: {
-                enable: true,
-                value_area: 800,
-            }
-        },
-        move: {
-            enable: true,
-            speed: 6,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            attract: {
-                enable: false,
-                rotateX: 600,
-                rotateY: 1200
-            }
-        },
-        interactivity:{
-            detect_on: "canvas",
-            onhover:{
-                enable:true,
-                mode:"repulse",
-            },
-            onclick:{
-                enable:true,
-                mode:"push",
-            },
-            resize:true,
-            modes: {
-                repulse: {
-                    distance: 200,
-                    duration: 0.4
-                },
-                push: {
-                    particles_nb: 4
-                }
-            }
-        }
-    }
-};
 
 class App extends Component {
     render() {
         return (
             <div>
-                <div className="uk-flex uk-position-cover uk-background-secondary"/>
-                <div style={{height:'100vh', width: '25vw', display:'flex', position: 'fixed', alignItems:'center'}}>
-                    <div uk-scrollspy="cls: uk-animation-slide-right; repeat: true" className='uk-position-cover uk-flex'>
-                        <Particles className="particles"
-                                   params={particlesOptions}
-                        />
-                    </div>
 
-                    <div uk-scrollspy="cls: uk-animation-slide-left; repeat: true" className='uk-align-center'>
-                        <Sidebar/>
-                    </div>
-                </div>
-
+                <Sidebar page={'projects'}/>
+                <div className='uk-visible@s'>
                 <div id='back' style={{marginLeft:'25vw', paddingLeft: '10px', paddingRight: '10px', height:'calc(100vh)', minHeight:'calc(100vh)', overflow: 'scroll'}} className="uk-flex uk-position-cover uk-background-primary">
 
                     <div style={{height:'calc(100vh)', minHeight:'calc(100vh)'}} className='uk-section uk-align-center'>
-                        <div className="uk-card uk-card-secondary uk-card-body">
+                        <div className="uk-card uk-card-body">
                             <section className='tiles'>
-                                <Project/>
-                                <Project/>
-                                <Project/>
+                                <Project projects={projects}/>
                             </section>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div>
+                    <div id='back' style={{paddingLeft: '10px', paddingRight: '10px', height:'calc(100vh)', minHeight:'calc(100vh)', overflow: 'scroll'}} className="uk-flex uk-position-cover uk-background-primary">
+
+                        <div style={{height:'calc(100vh)', minHeight:'calc(100vh)'}} className='uk-section uk-align-center'>
+                            <div className="uk-card uk-card-body">
+                                <section className='tiles'>
+                                    <Project projects={projects}/>
+                                </section>
+                            </div>
                         </div>
                     </div>
                 </div>

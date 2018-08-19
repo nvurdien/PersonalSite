@@ -29,10 +29,20 @@
 
 
 #back {
-  background: linear-gradient(240deg, #4b6cb7 0%, #182848 100%);
+    background: rgb(63,96,135);
+    background: linear-gradient(90deg, rgba(63,96,135,1) 0%, rgba(121,146,176,1) 65%, rgba(195,207,222,1) 100%);
 
 }
 
 .white {
   color: white !important;
+}
+
+
+.uk-card-secondary {
+  background-color: #3F6087;
+}
+
+.uk-background-secondary {
+  background-color: #3F6087;
 }

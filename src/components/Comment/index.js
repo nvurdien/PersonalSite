@@ -20,9 +20,10 @@ const Comment = ({author, date, body}) => (
 );
 
 export default ({comments,heading}) => (
-    <div className="uk-modal-dialog uk-modal-body">
+    <div className="uk-modal-dialog uk-modal-body" >
         <button className="uk-modal-close-default" type="button" uk-close=""/>
         <h2 className="uk-modal-title">Comments for {heading}</h2>
+        <div className=' uk-modal-body' uk-overflow-auto="">
         {
             comments.map((user, i) => {
                 return (
@@ -35,8 +36,10 @@ export default ({comments,heading}) => (
                 );
             })
         }
-        <div className='uk-margin-top'>
-        <CommentForm/>
+            <div className='uk-margin-top'>
+                <CommentForm/>
+            </div>
         </div>
+
     </div>
 )
